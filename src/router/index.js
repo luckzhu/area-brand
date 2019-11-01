@@ -8,7 +8,40 @@ const routes = [
   {
     path: "/",
     name: "home",
-    component: Home
+    component: Home,
+    redirect:"/map",
+    children: [
+      {
+        path: "/map",
+        name: "Map",
+        component: () => import("@/views/map.vue")
+      },
+      {
+        path: "/economic",
+        name: "Economic",
+        component: () => import("@/views/economic.vue")
+      },
+      {
+        path: "/market",
+        name: "Market",
+        component: () => import("@/views/market.vue")
+      },
+      {
+        path: "/enterprise",
+        name: "Enterprise",
+        component: () => import("@/views/enterprise.vue")
+      },
+      {
+        path: "/product",
+        name: "Product",
+        component: () => import("@/views/product.vue")
+      },
+      {
+        path: "/area",
+        name: "Area",
+        component: () => import("@/views/area.vue")
+      }
+    ]
   },
   {
     path: "/about",
