@@ -3,85 +3,85 @@
 </template>
 
 <script>
-import echarts from "echarts";
+import echarts from 'echarts'
 
 export default {
   props: {
     className: {
       type: String,
-      default: "chart"
+      default: 'chart'
     },
     id: {
       type: String,
-      default: "chart"
+      default: 'chart'
     },
     width: {
       type: String,
-      default: "200px"
+      default: '200px'
     },
     height: {
       type: String,
-      default: "200px"
+      default: '200px'
     }
   },
   data() {
     return {
       chart: null
-    };
+    }
   },
   mounted() {
-    this.initChart();
+    this.initChart()
   },
   beforeDestroy() {
     if (!this.chart) {
-      return;
+      return
     }
-    this.chart.dispose();
-    this.chart = null;
+    this.chart.dispose()
+    this.chart = null
   },
   methods: {
     initChart() {
-      this.chart = echarts.init(document.getElementById(this.id));
+      this.chart = echarts.init(document.getElementById(this.id))
       this.chart.setOption({
-        color: ["rgba(0,183,238, 1)", "rgba(86,199,60, 1)"],
+        color: ['rgba(0,183,238, 1)', 'rgba(86,199,60, 1)'],
         tooltip: {
           show: true,
-          trigger: "item"
+          trigger: 'item'
         },
         legend: {
-          data: ["德庆贡柑", "平均水平"],
-          bottom:20,
+          data: ['德庆贡柑', '平均水平'],
+          bottom: 20
         },
         radar: {
-          center: ["50%", "50%"],
-          radius: "70%",
+          center: ['50%', '50%'],
+          radius: '70%',
           startAngle: 90,
           splitNumber: 4,
-          shape: "circle",
+          shape: 'circle',
           splitArea: {
             areaStyle: {
-              color: ["transparent"]
+              color: ['transparent']
             }
           },
           axisLabel: {
             show: false,
             fontSize: 20,
-            color: "#000",
-            fontStyle: "normal",
-            fontWeight: "normal"
+            color: '#000',
+            fontStyle: 'normal',
+            fontWeight: 'normal'
           },
           axisLine: {
             show: true,
             lineStyle: {
-              type: "dashed",
-              color: "#999"
+              type: 'dashed',
+              color: '#999'
             }
           },
           splitLine: {
             show: true,
             lineStyle: {
-              type: "dashed",
-              color: "#999"
+              type: 'dashed',
+              color: '#999'
             }
           },
           // shape: 'circle',
@@ -91,7 +91,7 @@ export default {
             // borderColor: "#aaa",
             borderWidth: 1,
             borderRadius: 0,
-            color: "#444"
+            color: '#444'
             // rich: {
             //   a: {
             //     color: "#00b7ee",
@@ -132,23 +132,23 @@ export default {
           },
           indicator: [
             {
-              name: "产业化程度",
+              name: '产业化程度',
               max: 10
             },
             {
-              name: "企业竞争力",
+              name: '企业竞争力',
               max: 10
             },
             {
-              name: "产品影响力",
+              name: '产品影响力',
               max: 10
             },
             {
-              name: "产出效益",
+              name: '产出效益',
               max: 10
             },
             {
-              name: "发展环境",
+              name: '发展环境',
               max: 10
             }
           ]
@@ -156,32 +156,32 @@ export default {
 
         series: [
           {
-            name: "德庆贡柑",
-            type: "radar",
-            symbol: "circle",
+            name: '德庆贡柑',
+            type: 'radar',
+            symbol: 'circle',
             symbolSize: 10,
             label: {
               normal: {
                 show: true,
-                position: "right"
+                position: 'right'
               }
             },
 
             itemStyle: {
               normal: {
-                color: "rgba(0,183,238, 1)",
-                borderColor: "rgba(0,183,238, 0.4)",
+                color: 'rgba(0,183,238, 1)',
+                borderColor: 'rgba(0,183,238, 0.4)',
                 borderWidth: 10
               }
             },
             areaStyle: {
               normal: {
-                color: "rgba(0,183,238, 0.3)"
+                color: 'rgba(0,183,238, 0.3)'
               }
             },
             lineStyle: {
               normal: {
-                color: "rgba(0,183,238, 1)",
+                color: 'rgba(0,183,238, 1)',
                 width: 2
               }
             },
@@ -189,31 +189,31 @@ export default {
             data: [[5, 2.28, 7.5, 4.76, 5.6]]
           },
           {
-            name: "平均水平",
-            type: "radar",
-            symbol: "circle",
+            name: '平均水平',
+            type: 'radar',
+            symbol: 'circle',
             symbolSize: 10,
             areaStyle: {
               normal: {
-                color: "rgba(86,199,60, 0.3)"
+                color: 'rgba(86,199,60, 0.3)'
               }
             },
             itemStyle: {
-              color: "rgba(86,199,60, 1)",
-              borderColor: "rgba(86,199,60, 0.3)",
+              color: 'rgba(86,199,60, 1)',
+              borderColor: 'rgba(86,199,60, 0.3)',
               borderWidth: 10
             },
             lineStyle: {
               normal: {
-                color: "rgba(86,199,60, 1)",
+                color: 'rgba(86,199,60, 1)',
                 width: 2
               }
             },
             data: [[6, 6, 6, 6, 6, 6]]
           }
         ]
-      });
+      })
     }
   }
-};
+}
 </script>

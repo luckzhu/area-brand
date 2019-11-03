@@ -12,11 +12,11 @@
   margin-bottom: 20px;
   border-radius: 4px;
 }
-.boxTitle{
+.boxTitle {
   font-size: 20px;
   font-weight: 600;
-  color: #777777;
+  color: #132937;
   margin-left: 36px;
-  font-family: "Microsoft YaHei"
+  font-family: 'Microsoft YaHei';
 }
 </style>

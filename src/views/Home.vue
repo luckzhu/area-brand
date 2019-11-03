@@ -11,8 +11,8 @@
       >
         <el-menu-item index="map">流通地图</el-menu-item>
         <el-menu-item index="economic">经济指标</el-menu-item>
-        <el-menu-item index="market">销售地区</el-menu-item>
         <el-menu-item index="area">区域指标</el-menu-item>
+        <el-menu-item index="market">区域指标2</el-menu-item>
         <el-menu-item index="enterprise">企业指标</el-menu-item>
         <el-menu-item index="product">产品指标</el-menu-item>
       </el-menu>
@@ -28,19 +28,19 @@
 // import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
-  name: "home",
+  name: 'home',
   components: {},
   data() {
     return {
-      activeIndex: "map"
-    };
+      activeIndex: 'map'
+    }
   },
   methods: {
     handleSelect(key, keyPath) {
-      console.log(key, keyPath);
+      console.log(key, keyPath)
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

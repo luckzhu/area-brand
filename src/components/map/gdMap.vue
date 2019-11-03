@@ -6,6 +6,8 @@
 import echarts from 'echarts'
 // import '@/assets/map/js/guangdong.js'
 import guangdong from '@/assets/map/json/province/guangdong.json'
+import xianggang from '@/assets/map/json/province/xianggang.json'
+import aomen from '@/assets/map/json/province/aomen.json'
 export default {
   props: {
     className: {
@@ -44,22 +46,31 @@ export default {
     initChart() {
       this.chart = echarts.init(document.getElementById(this.id))
       this.$echarts.registerMap('广东', guangdong)
+      this.$echarts.registerMap('香港', xianggang)
+      this.$echarts.registerMap('澳门', aomen)
       var geoCoordMap = {
-        广州: [113.264, 23.129],
-        深圳: [114.059, 22.542],
-        东莞: [113.757, 23.02],
-        中山: [113.393, 22.516],
-        珠海: [113.577, 22.271],
-        德庆贡柑: [111.929, 23.247]
+        梅县金柚: [116.09, 24.446],
+        大湾区: [114.059, 22.542],
+        大埔蜜柚: [116.706, 24.349],
+        廉江红橙: [109.858, 21.614],
+        仁化贡柑: [113.825, 25.071],
+        德庆贡柑: [111.929, 23.247],
+        平远脐橙: [115.894, 24.555]
       }
 
       var BJData = [
-        [{ name: '德庆贡柑' }, { name: '广州', value: 95 }],
-        [{ name: '德庆贡柑' }, { name: '德庆贡柑', value: 1 }],
-        [{ name: '德庆贡柑' }, { name: '深圳', value: 90 }],
-        [{ name: '德庆贡柑' }, { name: '东莞', value: 80 }],
-        [{ name: '德庆贡柑' }, { name: '中山', value: 60 }],
-        [{ name: '德庆贡柑' }, { name: '珠海', value: 60 }]
+        [{ name: '德庆贡柑' }, { name: '大湾区', value: 50 }],
+        [{ name: '德庆贡柑' }, { name: '德庆贡柑', value: 32.3 }],
+        [{ name: '梅县金柚' }, { name: '大湾区', value: 50 }],
+        [{ name: '梅县金柚' }, { name: '梅县金柚', value: 227.48 }],
+        [{ name: '大埔蜜柚' }, { name: '大湾区', value: 50 }],
+        [{ name: '大埔蜜柚' }, { name: '大埔蜜柚', value: 35.31 }],
+        [{ name: '廉江红橙' }, { name: '大湾区', value: 50 }],
+        [{ name: '廉江红橙' }, { name: '廉江红橙', value: 30.65 }],
+        [{ name: '仁化贡柑' }, { name: '大湾区', value: 50 }],
+        [{ name: '仁化贡柑' }, { name: '仁化贡柑', value: 21.37 }],
+        [{ name: '平远脐橙' }, { name: '大湾区', value: 50 }],
+        [{ name: '平远脐橙' }, { name: '平远脐橙', value: 14.13 }]
       ]
 
       var planePath =
@@ -84,11 +95,11 @@ export default {
 
       var color = ['#ff5e3a', '#ffa022', '#46bee9']
       var series = []
-      ;[['德庆贡柑', BJData]].forEach(function(item, i) {
+      ;[['柑橘橙柚', BJData]].forEach(function(item, i) {
         series.push(
           {
             // name: item[0] + " Top10",
-            name: '德庆贡柑',
+            name: '',
             type: 'lines',
             zlevel: 1,
             effect: {
@@ -96,7 +107,7 @@ export default {
               period: 6,
               trailLength: 0.7,
               color: '#fff',
-              symbolSize: 3
+              symbolSize: 7
             },
             lineStyle: {
               normal: {
@@ -135,6 +146,10 @@ export default {
             type: 'effectScatter',
             coordinateSystem: 'geo',
             zlevel: 2,
+            legendHoverLink: true, //是否启用图例 hover 时的联动高亮。
+            hoverAnimation: true, //是否开启鼠标 hover 的提示动画效果。
+            effectType: 'ripple', //特效类型，目前只支持涟漪特效'ripple'。
+            showEffectOn: 'render', //配置何时显示特效。可选：'render' 绘制完成后显示特效。'emphasis' 高亮（hover）的时候显示特效。
             rippleEffect: {
               brushType: 'stroke'
             },
@@ -146,7 +161,7 @@ export default {
               }
             },
             symbolSize: function(val) {
-              return val[2] / 8
+              return val[2] / 2
             },
             itemStyle: {
               normal: {
@@ -166,12 +181,18 @@ export default {
       this.chart.setOption({
         backgroundColor: '#fff',
         title: {
-          text: '德庆贡柑销售地区',
-          subtext: '省内',
+          text: '2018柑橘橙柚销售情况',
+          subtext: '粤港澳大湾区',
           left: 'center',
-          top: 20,
+          top: '30px',
           textStyle: {
-            color: '#333'
+            fontSize: 40,
+            color: '#222',
+            fontFamily: 'Arial'
+          },
+          subtextStyle: {
+            fontSize: 24,
+            fontWeight: '600'
           }
         },
         tooltip: {
@@ -181,7 +202,7 @@ export default {
           orient: 'vertical',
           top: 'bottom',
           left: 'right',
-          data: ['德庆贡柑'],
+          data: ['北京 Top10', '上海 Top10', '广州 Top10'],
           textStyle: {
             color: '#fff'
           },
