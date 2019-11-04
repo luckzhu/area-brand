@@ -43,7 +43,17 @@ export default {
     initChart() {
       this.chart = echarts.init(document.getElementById(this.id));
       this.chart.setOption({
-       
+        title: {
+          text: "产品影响力",
+          left: "left",
+          padding: 20,
+
+          textStyle: {
+            height: 30,
+            fontSize: "18",
+            color: "#333"
+          }
+        },
         tooltip: {
           trigger: "axis",
           axisPointer: {
@@ -52,7 +62,12 @@ export default {
           }
         },
         legend: {
+          bottom: 10,
           data: [
+            "",
+            "",
+            "",
+            "",
             "历史年份得分",
             "带动农户得分",
             "传播力得分",
@@ -64,7 +79,8 @@ export default {
         grid: {
           left: "3%",
           right: "4%",
-          bottom: "3%",
+          bottom: "9%",
+          top:"12%",
           containLabel: true
         },
         xAxis: {

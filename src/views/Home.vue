@@ -2,13 +2,7 @@
   <div class="home">
     <!-- <h1>2018柑橘橙柚区域公用品牌大数据分析</h1> -->
     <div class="menu">
-      <el-menu
-        :default-active="activeIndex"
-        class="el-menu-demo"
-        mode="horizontal"
-        @select="handleSelect"
-        router
-      >
+      <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" router>
         <el-menu-item index="map">流通地图</el-menu-item>
         <el-menu-item index="economic">经济指标</el-menu-item>
         <el-menu-item index="area">区域指标</el-menu-item>
@@ -28,19 +22,19 @@
 // import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
-  name: 'home',
+  name: "home",
   components: {},
   data() {
     return {
-      activeIndex: 'map'
-    }
+      activeIndex: "map"
+    };
   },
   methods: {
-    handleSelect(key, keyPath) {
-      console.log(key, keyPath)
-    }
+    // handleSelect(key, keyPath) {
+    //   console.log(key, keyPath)
+    // }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -53,7 +47,7 @@ export default {
 .chartBox {
   width: 100%;
   height: 100%;
-  padding: 20px;
+  padding: 20px 20px 0 0;
   background: #eee;
 }
 </style>

@@ -53,13 +53,13 @@ export default {
       this.chart.setOption({
         backgroundColor: "#fff",
         title: {
-          text: "227.5",
+          text: "32.3",
           x: "center",
           y: "center",
           subtext: "亿元",
           itemGap: -10,
           textStyle: {
-            fontSize: 60,
+            fontSize: 70,
             fontWeight: "600",
             color: "#fe7000",
             fontStyle: "italic",

@@ -43,6 +43,17 @@ export default {
     initChart() {
       this.chart = echarts.init(document.getElementById(this.id));
       this.chart.setOption({
+        title: {
+          text: "产出效益\n",
+          left: "left",
+          padding: 20,
+
+          textStyle: {
+            height: 30,
+            fontSize: "18",
+            color: "#333"
+          }
+        },
         tooltip: {
           trigger: "axis",
           axisPointer: {
@@ -52,6 +63,13 @@ export default {
             }
           }
         },
+        grid: {
+          left: "7%", //图表距离左右上下之间的距离
+          right: "4%",
+          top: "20%",
+          bottom: "5%",
+          containLabel: true
+        },
         toolbox: {
           feature: {
             magicType: { show: true, type: ["line", "bar"] },
@@ -60,7 +78,7 @@ export default {
           }
         },
         legend: {
-          data: ["亩均产值（万元）", "产出效益得分"]
+          data: ["","","","", "亩均产值（万元）", "产出效益得分"]
         },
         xAxis: [
           {

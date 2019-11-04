@@ -76,14 +76,15 @@ export default {
           }
         },
         grid: {
-          bottom: 150,
-          left: 0,
-          right: "10%"
+          top: 10,
+          bottom: 10,
+          left: 20,
+          right: 30,
         },
         legend: {
           show: true,
-
-          top: 20,
+          
+          bottom: 20,
           textStyle: {
             color: "#444"
           },

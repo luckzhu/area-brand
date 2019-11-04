@@ -53,7 +53,7 @@ export default {
       this.chart.setOption({
         backgroundColor: "#fff",
         title: {
-          text: "12753",
+          text: "8571",
           x: "center",
           y: "center",
           subtext: "元/亩",
