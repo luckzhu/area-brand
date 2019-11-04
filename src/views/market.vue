@@ -1,9 +1,9 @@
 <template>
   <div class="area">
-    <div class="box part">
+    <!-- <div class="box part">
       <p class="boxTitle">产值</p>
       <area-prodValue id="7" height="400px" width="750px" />
-    </div>
+    </div> -->
     <div class="box part">
       <p class="boxTitle">产业化程度</p>
       <area-indust id="4" height="400px" width="750px" />
@@ -23,13 +23,13 @@
 import areaIndust from "@/components/area/area-indust.vue";
 import areaEnv from "@/components/area/area-env.vue";
 import areaCompete from "@/components/area/area-compete.vue";
-import areaProdValue from "@/components/area/area-prodValue.vue";
+// import areaProdValue from "@/components/area/area-prodValue.vue";
 export default {
   components: {
     areaIndust,
     areaEnv,
     areaCompete,
-    areaProdValue
+    // areaProdValue
   }
 };
 </script>

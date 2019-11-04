@@ -182,7 +182,14 @@ export default {
         tooltip: {
           show: true
         },
-
+        title: {
+          text: "企业竞争力-六大能力",
+          left: "center",
+          top: 20,
+          textStyle: {
+            color: "#333"
+          }
+        },
         grid: {
           left: "1px",
           right: "1px",

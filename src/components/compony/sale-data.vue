@@ -46,6 +46,23 @@ export default {
       this.chart = echarts.init(document.getElementById(this.id));
 
       this.chart.setOption({
+        title: {
+          text: "企业营收数据\n",
+          left: "left",
+          padding: 20,
+          textStyle: {
+            height: 30,
+            fontSize: "18",
+            color: "#333"
+          }
+        },
+        grid: {
+          left: "3%", //图表距离左右上下之间的距离
+          right: "4%",
+          top: "20%",
+          bottom: "5%",
+          containLabel: true
+        },
         tooltip: {
           trigger: "axis",
           axisPointer: {

@@ -2,7 +2,6 @@
   <div class="enterprise">
     <div class="box">
       <p class="boxTitle">德庆县腾龙果品农民专业合作社</p>
-      <p class="boxTitle">企业竞争力六大能力</p>
       <sale-six id="3" height="710px" width="700px" />
     </div>
     <div class="chartPart">

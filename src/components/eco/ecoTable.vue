@@ -5,9 +5,9 @@
     <el-table-column prop="yield" label="产量（万吨）" align="center"></el-table-column>
     <el-table-column prop="PerAcreBenefit" label="亩均效益（元/亩）" align="center"></el-table-column>
     <el-table-column prop="bringFarmer" label="带动农户（人）" align="center"></el-table-column>
-    <el-table-column prop="action" label="操作" align="center">
+    <!-- <el-table-column prop="action" label="操作" align="center">
       <el-button type="warning" size="small">查看更多</el-button>
-    </el-table-column>
+    </el-table-column> -->
   </el-table>
 </template>
 
